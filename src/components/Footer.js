@@ -1,3 +1,9 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer>
+      <Link to="/">&copy; 2030 - SHOPMATE</Link>
+    </footer>
+  );
 };
