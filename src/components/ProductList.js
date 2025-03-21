@@ -3,7 +3,7 @@ import { useFetch } from "../hooks/useFetch";
 
 export const ProductList = () => {
   //   const [products, setProducts] = useState([]);
-  const [url, setUrl] = useState("http://localhost:8000/products");
+  const [url, setUrl] = useState("http://localhost:8000/productss");
 
   //   const fetchProducts = useCallback(async () => {
   //     try {
@@ -19,7 +19,7 @@ export const ProductList = () => {
   //     fetchProducts();
   //   }, [fetchProducts]);
 
-  const { data: products } = useFetch(url);
+  const { data: products, error } = useFetch(url);
 
   return (
     <section>
@@ -31,6 +31,7 @@ export const ProductList = () => {
       >
         In stock only
       </button>
+      {error && <div>{error}</div>}
       {products &&
         products.map((product) => {
           return (
